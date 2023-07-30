@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<form action="{% url 'blog' %}" method="post">
+    {% csrf_token %}
+    <div>
+
+    
+    <br>
+    <div class="input-group mb-3">
+        
+        <span class="input-group-text" id="basic-addon1">Title of a Blog</span>
+        <input type="text" class="form-control" placeholder="Title" aria-label="Username" aria-describedby="basic-addon1" name="title">
+      </div>
+      
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label" name ="description">Blog Description</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+            <label class="form-label"> create_date </label>
+            <input  required type="date" class="form-control" id="create_date" name="create_date">
+            
+            <label class="form-label"> Updated At </label>
+            <input  required type="time" class="form-control" id="updated_at" name="updated_at">
+        </div>
+        
+      <br>
+        
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div>
+        
+    </div>
+</form>
+
+{% endblock content %}
